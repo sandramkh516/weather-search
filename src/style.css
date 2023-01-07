@@ -28,9 +28,14 @@ strong {
   display: inline;
   margin: 0 50px;
 }
+p {
+  text-align: center;
+  margin-top: 0;
+}
 .wrapper {
   max-width: 800px;
   margin: 150px auto;
+  margin-bottom: 0;
   padding: 30px 50px;
   border: 1px solid blueviolet;
   border-radius: 12px;
@@ -66,6 +71,7 @@ strong {
   font-size: 20px;
   font-weight: 50px;
 }
+
 .size {
   font-size: 30px;
 }
