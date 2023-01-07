@@ -32,6 +32,9 @@ p {
   text-align: center;
   margin-top: 0;
 }
+a {
+  text-decoration: none;
+}
 .wrapper {
   max-width: 800px;
   margin: 150px auto;
