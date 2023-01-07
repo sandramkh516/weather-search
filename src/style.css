@@ -8,6 +8,25 @@ body {
 }
 h1 {
   font-size: 48px;
+  color: rgb(27, 169, 182);
+  display: inline;
+}
+ul {
+  list-style: none;
+  padding: 0px;
+}
+li {
+  text-align: center;
+}
+.margin li {
+  text-align: left;
+}
+strong {
+  font-size: 20px;
+}
+.inline li {
+  display: inline;
+  margin: 0 50px;
 }
 .wrapper {
   max-width: 800px;
@@ -19,19 +38,34 @@ h1 {
 }
 .border-description {
   border: 1px solid sandybrown;
-  border-radius: 30px;
-  padding: 10px;
-}
-ul {
-  list-style: none;
-  padding: 0px;
-}
-.margin li {
-  text-align: left;
-}
-li {
+  border-radius: 20px;
+  border-style: none;
+  max-width: 400px;
   text-align: center;
+  padding-top: 15px;
+  padding-bottom: 2px;
+  margin-left: 100px;
+  margin-bottom: 20px;
+  background-color: rgb(142, 202, 227);
 }
+
 .day {
   border: 1px solid skyblue;
+  margin-bottom: 20px;
+  background-color: rgb(158, 251, 220);
+}
+.active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+.active:hover {
+  text-decoration: none;
+}
+.sky-descrip {
+  font-size: 20px;
+  font-weight: 50px;
+}
+.size {
+  font-size: 30px;
 }
