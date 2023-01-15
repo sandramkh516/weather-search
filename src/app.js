@@ -60,17 +60,12 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 function getForecast(coordinates) {
+  console.log(coordinates);
   let apiKey = "a5acb752426cd8188485c35694980e3a";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.latitude}&lon=${coordinates.longitude}&appid=${apiUrl}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
   console.log(apiUrl);
 }
-//function getForecast(coordinates) {
-//let apiKey = "6a48a550fc04f170639e60d52b8a6bc5";
-//let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-//axios.get(apiUrl).then(displayForecast);
-//console.log(apiUrl);
-//}
 
 function displayTemperature(response) {
   celsiustemp = response.data.temperature.current;
@@ -91,7 +86,7 @@ function displayTemperature(response) {
   feelsLike.innerHTML = Math.round(response.data.temperature.feels_like);
   iconElement.setAttribute("src", iconUrl);
   dateElement.innerHTML = formatDate();
-  getForecast(response.data.coord);
+  getForecast(response.data.coordinates);
 }
 function search(event) {
   event.preventDefault();
@@ -137,7 +132,9 @@ function currentCity(response) {
   iconElement.setAttribute("src", iconUrl);
   dateElement.innerHTML = formatDate();
 }
-navigator.geolocation.getCurrentPosition(currentPosition);
+function geolocation() {
+  navigator.geolocation.getCurrentPosition(currentPosition);
+}
 let buttonCurrent = document.querySelector("#current-input");
 buttonCurrent.addEventListener("submit", currentPosition);
 
