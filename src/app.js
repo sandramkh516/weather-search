@@ -44,14 +44,14 @@ function displayForecast(response) {
 <ul>
 <li>${formatDay(forecastDay.dt)}</li>
 <li class="size"> <img
-          src="http://openweathermap.org/img/wn/${
-            forecastDay.weather[0].icon
-          }@2x.png"
+          src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+            forecastDay.condition.icon
+          }.png
           alt=""
           width="42"
         /></li>
-<li>${Math.round(forecastDay.temp.max)}°</li>
-<li>${Math.round(forecastDay.temp.min)}°</li>
+<li>${Math.round(forecastDay.temperature.maximum)}°</li>
+<li>${Math.round(forecastDay.temperature.minimum)}°</li>
 </ul>
 </div></div>`;
     }
@@ -61,8 +61,8 @@ function displayForecast(response) {
 }
 function getForecast(coordinates) {
   console.log(coordinates);
-  let apiKey = "a5acb752426cd8188485c35694980e3a";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.latitude}&lon=${coordinates.longitude}&appid=${apiUrl}&units=metric`;
+  let apiKey = "c9f615743fd9bf271obd0cc3t2aeaf2";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
   console.log(apiUrl);
 }
